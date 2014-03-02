@@ -1,11 +1,9 @@
 %define	pkgname financial
-%define name	octave-%{pkgname}
-%define version 0.3.2
 
 Summary:	Financial functions for Octave
-Name:		%{name}
-Version:	%{version}
-Release:        2
+Name:       octave-%{pkgname}
+Version:	0.3.2
+Release:       3
 Source0:	%{pkgname}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Sciences/Mathematics
@@ -15,8 +13,8 @@ Requires:	octave >= 3.0.0
 Requires:	octave-time >= 1.0.5
 Requires:	octave-miscellaneous >= 1.0.6
 BuildRequires:  octave-devel >= 3.0.0
-BuildRequires:  mesagl-devel
-BuildRequires:  mesaglu-devel
+BuildRequires:  pkgconfig(gl)
+BuildRequires:  pkgconfig(glu)
 BuildArch:	noarch
 
 %description
@@ -44,14 +42,5 @@ mv %{pkgname}-%{version}/DESCRIPTION .
 %{_bindir}/test -x %{_bindir}/octave && %{_bindir}/octave -q -H --no-site-file --eval "pkg('rebuild');" || :
 
 %files
-%defattr(-,root,root)
 %doc COPYING DESCRIPTION
 %{_datadir}/octave/packages/%{pkgname}-%{version}
-
-
-%changelog
-* Tue Jun 28 2011 Lev Givon <lev@mandriva.org> 0.3.2-1mdv2011.0
-+ Revision: 687904
-- import octave-financial
-
-
