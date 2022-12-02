@@ -4,10 +4,10 @@ Summary:	Financial functions for Octave
 Name:		octave-%{octpkg}
 Version:	0.5.3
 Release:	1
-Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://octave.sourceforge.io/%{octpkg}/
+Url:		https://packages.octave.org/%{octpkg}/
 BuildArch:	noarch
 
 BuildRequires:	octave-devel >= 4.4.0
@@ -24,8 +24,6 @@ Requires(postun): octave
 %description
 Monte Carlo simulation, options pricing routines,  financial manipulation,
 plotting functions and additional date manipulation tools for Octave.
-
-This package is part of community Octave-Forge collection.
 
 %files
 %license COPYING
