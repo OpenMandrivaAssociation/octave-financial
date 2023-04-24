@@ -1,29 +1,31 @@
 %global octpkg financial
 
 Summary:	Financial functions for Octave
-Name:		octave-%{octpkg}
+Name:		octave-financial
 Version:	0.5.3
-Release:	1
-Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Release:	2
 License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://packages.octave.org/%{octpkg}/
-BuildArch:	noarch
+Url:		https://packages.octave.org/financial/
+Source0:	https://downloads.sourceforge.net/octave/financial-%{version}.tar.gz
 
-BuildRequires:	octave-devel >= 4.4.0
-BuildRequires:	octave-io >= 2.4.11
-BuildRequires:	octave-statistics >= 1.4.0
+BuildRequires:  octave-devel >= 4.4.0
+BuildRequires:  octave-io >= 2.4.11
+BuildRequires:  octave-statistics >= 1.4.0
 
 Requires:	octave(api) = %{octave_api}
-Requires:	octave-io >= 2.4.11
-Requires:	octave-statistics >= 1.4.0
+Requires:  	octave-io >= 2.4.11
+Requires:  	octave-statistics >= 1.4.0
 
 Requires(post): octave
 Requires(postun): octave
 
+BuildArch:	noarch
+
 %description
-Monte Carlo simulation, options pricing routines,  financial manipulation,
-plotting functions and additional date manipulation tools for Octave.
+Monte Carlo simulation, options pricing routines, financial
+manipulation, plotting functions and additional date manipulation
+tools for Octave.
 
 %files
 %license COPYING
@@ -35,9 +37,6 @@ plotting functions and additional date manipulation tools for Octave.
 
 %prep
 %autosetup -p1 -n %{octpkg}-%{version}
-
-# remove backup files
-#find . -name \*~ -delete
 
 %build
 %octave_pkg_build
