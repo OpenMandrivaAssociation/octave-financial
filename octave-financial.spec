@@ -3,7 +3,7 @@
 Summary:	Financial functions for Octave
 Name:		octave-financial
 Version:	0.5.3
-Release:	2
+Release:	3
 License:	GPLv3+
 Group:		Sciences/Mathematics
 Url:		https://packages.octave.org/financial/
